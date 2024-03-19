@@ -1,0 +1,20 @@
+[flake8]
+# Ignore certain errors or warnings
+#ignore = E203, E266, E501, W503
+# Select which errors and warnings to display
+#select = F, W, E, E101
+# Maximum line length
+#max-line-length = 88
+# Enable some error codes that are disabled by default
+#enable-extensions = G
+
+# Exclude certain directories or files from linting
+exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist,
+    smartGrader/smartGrader/
+    venv/
