@@ -1,0 +1,318 @@
+/*
+    Landing page css file of the Smart Grader Django web application.
+    Written by Ravindu Priyankara. 03/10/2024
+    github: https://github.com/Ravindu-Priyankara
+*/
+/* global styles for all elements in a web page*/
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+/*page width and height design*/
+html,body{
+    height: 100%;
+    width: 100%;
+}
+/* main section design */
+#main{
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+/* first page css code snippet */
+#page{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom , rgb(173, 16, 165) , rgb(48, 30, 167));;/* Add linear gradient background to first page */
+}
+/* second page css code snippet */
+#page1{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, rgb(28, 26, 169) , rgb(0, 229, 255));; /* linear gradient background to second page */
+}
+/* third page css code snippet */
+#page2{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, rgb(28, 26, 169) , rgb(0, 229, 255));; /* linear gradient background to third page */
+}
+/* last page css code snippet */
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, rgb(28, 26, 169) , rgb(0, 229, 255));; /* linear gradient background to last page */
+}
+/* canvas css code snippet */
+canvas{
+    position: relative;
+    z-index: 9;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+/* loop section css code snippet */
+#loop{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    height: 25%;
+    width: 100%;
+    font-size: 100px;
+    white-space: nowrap;
+    font-family: gilroy;
+}
+/* h1 tag css code snippet inside of loop section */
+#loop>h1{
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: chartreuse;
+}
+/* span section css code snippet inside of loop and h1 sections */
+#loop>h1>span{
+    -webkit-text-stroke: 1.2px #000;
+    color: transparent;
+    font-weight: 500;
+    color: darkorchid;
+}
+@keyframes anim{/* add animation to span property that move throught x axis. */
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+/* first page h3 tag CSS code snippet */
+#page>h3{
+    position: absolute;
+    top: 55%;
+    font-family: gilroy;
+    font-weight: 400;
+    color: #ffffff;
+    right: 2%;
+}
+/* first page h4 tag CSS code snippet */
+#page>h4{
+    position: absolute;
+    top: 62%;
+    left: 25%;
+    font-family: gilroy;
+    font-weight: 500;
+}
+/* second page left text CSS code snippet */
+#page1>#left-text{
+    position: absolute;
+    top: 30%;
+    left: 2%;
+}
+/* second page h3 inside left text  CSS code snippet */
+#page1>#left-text>h3{
+    font-weight: 400;
+    color: #f1fa71;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* second page h1 inside left text  CSS code snippet */
+#page1>#left-text>h1{
+    line-height: 1.5;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* second page right text CSS code snippet */
+#page1>#right-text{
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    text-align: end;
+}
+/* second page h1 inside right text  CSS code snippet */
+#page1>#right-text>h1{
+    font-size: 50px;
+    line-height: 1.5;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px #ffffff;
+}
+/* second page h3 inside right text  CSS code snippet */
+#page1>#right-text>h3{
+    color: #e6ff45;
+    font-weight: 400;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* Third page text1 CSS code snippet */
+#page2>#text1{
+    position: absolute;
+    top: 20%;
+    left: 2%;
+}
+/* third page h3 inside text1  CSS code snippet */
+#page2>#text1>h3{
+    color: #f1fa71;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* third page h1 inside text1  CSS code snippet */
+#page2>#text1>h1{
+    font-size: 60px;
+    line-height: 1.5;
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* Third page text2 CSS code snippet */
+#page2>#text2{
+    position: absolute;
+    top: 55%;
+    right: 2%;
+    text-align: end;
+}
+/* third page paragraph tag inside text2  CSS code snippet */
+#page2>#text2>p{
+    font-size: 18px;
+    color: #f1fa71;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* last page text3  CSS code snippet */
+#page3>#text3{
+    position: absolute;
+    top: 35%;
+    left: 2%;
+}
+/* last page h3 inside text3  CSS code snippet */
+#page3>#text3>h3{
+    color: #f1fa71;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* last page h1 inside text3  CSS code snippet */
+#page3>#text3>h1{
+    line-height: 1.5;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* last page text4  CSS code snippet */
+#page3>#text4{
+    position: absolute;
+    top: 55%;
+    right: 8%;
+    text-align: end;
+}
+/* last page h2 inside text4  CSS code snippet */
+#page3>#text4>h2{
+    line-height: 1.5;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+}
+/* last page img tag inside text4  CSS code snippet */
+#page3>#text4>img{
+    position: relative;
+    right: 20%;
+    width: 25%;
+    height: 50%;
+}
+/* last page custom designed img2 tag inside text4  CSS code snippet */
+#page3>#text4>.img2{
+    position: absolute;
+    top: 55%;
+    right: 24.5%;
+    width: 15%;
+    height: 36%;
+}
+/* section tag CSS code snippet */
+section{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: #57ff3100;
+	width: 100%;
+	height: 100vh;
+}
+/* footer section CSS code snippet */
+footer {
+    opacity: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    background: url(../img/footer.png); /* Load footer image on static/img folder */
+    z-index: 1;
+}
+/* Hide footer on fist page */
+.hide-footer {
+    opacity: 0; /* Initially hide the footer */
+    transition: opacity 0.3s ease;
+    display: none;
+}
+/* footer section shop now button CSS code snippet */
+.button {
+    position: absolute;
+    top:35%;
+    right: 7%;
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+/* above button activate and hover design code set */
+.button:active,
+.button:hover {
+    outline: 0;
+}
+/*above button span tag design CSS code snippet */
+.button span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+/* After button hover span tag {which mean span tag hold text.} design code set */
+.button:hover span {
+    background: none;
+}
+
+/* 
+    Media query for screens with a minimum width of 768 pixels.
+    Adjusts the styling of elements with the class 'button' for larger screens.
+*/
+@media (min-width: 768px) {
+    .button {
+        font-size: 24px; /* Increases the font size of buttons for better readability on larger screens */
+        min-width: 196px; /* Sets a minimum width for buttons to ensure they remain sufficiently sized on larger screens */
+    }
+}
+
+/*
+    A touch of brilliance by the mastermind, Ravindu Priyankara,😜😈
+    crafting elegance in code. 
+    EOF: The end of this masterpiece. 
+*/
