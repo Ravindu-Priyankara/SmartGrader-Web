@@ -1,0 +1,67 @@
+/*
+    Define styling for the 'nova' and 'nova2' classes, which are used to position and style SVG text elements.
+    The 'nova' class positions the text to the left, while the 'nova2' class positions it to the right.
+    Both classes use the 'Russo One' font and apply animation to the text.
+
+    Keyframes animation 'stroke' is applied to animate the stroke of the text.
+    The animation alternates between strokes with varying properties, creating a dynamic effect.
+	Author : Ravindu Priyanksra 03/10/2024
+*/
+.nova {
+	font-family: 'Russo One', sans-serif;
+	position: absolute; 
+    width: 100%; height: 100%;
+	left: -30rem;
+
+}
+.nova text {
+	text-transform: uppercase;
+	animation: stroke 5s infinite alternate;
+	stroke-width: 2;
+	stroke: #000000;
+	font-size: 140px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,20,0); stroke: rgb(235, 247, 7);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,20,0); stroke: rgb(191, 247, 7); }
+	80%  {fill: rgba(72,138,20,0); stroke: rgb(195, 247, 7); stroke-width: 3; }
+	100% {
+		fill: rgb(155, 247, 7); stroke: rgba(54,95,160,0); 
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+.nova2 {
+	font-family: 'Russo One', sans-serif;
+	position: absolute; 
+    width: 100%; height: 100%;
+	left: 30rem;
+
+}
+.nova2 text {
+	text-transform: uppercase;
+	animation: stroke 5s infinite alternate;
+	stroke-width: 2;
+	stroke: #000000;
+	font-size: 140px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,20,0); stroke: rgb(255, 255, 255);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,20,0); stroke: rgb(126, 197, 12); }
+	80%  {fill: rgba(72,138,20,0); stroke: rgb(167, 247, 7); stroke-width: 3; }
+	100% {
+		fill: rgb(159, 247, 7); stroke: rgba(54,95,160,0); 
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+/*
+    A touch of brilliance by the mastermind, Ravindu Priyankara,😜😈
+    crafting elegance in code. 
+    EOF: The end of this masterpiece. 
+*/

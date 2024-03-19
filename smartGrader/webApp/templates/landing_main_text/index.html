@@ -1,0 +1,32 @@
+<!--
+    Load static files and external font resources for the Smart Grader landing page.
+    Static CSS file 'nova.css' is loaded for styling.
+    External font 'Russo One' is imported from Google Fonts for typography.
+    
+    Two SVG elements with class 'nova' and 'nova2' are included to display the 'Smart' and 'Grader' text logos respectively.
+    Each SVG contains a text element positioned at the center for the logo text.
+
+	Author: Ravindu Priyankara
+-->
+
+{%load static%}
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/landing_main_text/index.css' %}">
+
+<svg class = "nova" viewBox="0 0 1320 300">
+	<text x="50%" y="50%" dy=".35em" text-anchor="middle">
+		Smart
+	</text>
+</svg>	
+
+<svg class = "nova2" viewBox="0 0 1320 300">
+	<text x="50%" y="50%" dy=".35em" text-anchor="middle">
+		Grader
+	</text>
+</svg>	
+
+<!--
+    A touch of brilliance by the mastermind, Ravindu Priyankara,😜😈
+    crafting elegance in code. 
+    EOF: The end of this masterpiece. 
+-->

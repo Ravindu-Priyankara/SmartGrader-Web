@@ -1,9 +1,106 @@
+<!--
+    Landing page of the Smart Grader Django web application.
+    This HTML file utilizes Django templating for dynamic content.
+    Written by Ravindu Priyankara. 03/10/2024
+    github: https://github.com/Ravindu-Priyankara
+-->
+{% load static %}
 <!DOCTYPE html>
-<html>
-<body>
-
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nova Store Landing</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <!-- Navigation links can be added here -->
+                <!--This landing page hsn't navigation bar. if you custermise this you can add here.-->
+            </nav>
+        </header>
+        <main>
+            <div id="main"> <!--This is the main section it contain 3 pages-->
+                <section>
+                    <div id="page"><!--This is the first page of landing page.-->
+                        <div id="loop">
+                            {% include "landing_main_text/index.html"%} <!--Loading page front animation text html file-->
+                        </div>
+                        <canvas></canvas>
+                    </div>
+                    
+                </section>
+                <div id="page1"><!--This is the second page.-->
+                    <div id="left-text"><!--Second page left text is this.-->
+                        <h3>NOVA STORE / FREEDOM</h3>
+                        <h1>LIFE IS
+                            <br>
+                            "SHORT".
+                            <br>
+                            BUY THE SHOES.</h1>
+                    </div>
+                    <div id="right-text"><!--Second page right text is this.-->
+                        <h1>MAKE A STORY
+                            <br>
+                            TAKE A CHANCE
+                            <br>
+                            BUILD AND OWNED</h1>
+                            <h3>..AND BE THE PART OF NOVA</h3>
+                    </div>
+                </div>
+                <div id="page2"><!--Page2 is the third page of nova store landing page.-->
+                    <div id="text1"><!--Text1 is the third page left text.-->
+                        <h3>NOVA STORE / SAVE TIME</h3>
+                        <h1>WHERE
+                            <br>
+                            CONVENIENCE
+                            <br>
+                            MEETS QUALITY!</h1>
+                    </div>
+                    <div id="text2"><!--Text2 is the third page right text-->
+                        <p>At Nova Store, we understand the value of your time.<br> That's why we've curated a one-stop shop where you can find top-quality <br>products without sacrificing hours of your day. From everyday essentials to <br>luxury indulgences, our selection is designed to cater to your needs<br> swiftly and efficiently. Experience the ease of shopping with Nova Store <br>and reclaim your valuable time for the things that truly matter.</p>
+                    </div>
+                </div>
+                <div id="page3"><!--Last page of the nova store landing page-->
+                    <div id="text3"><!--text3 is last page left text-->
+                        <h3>NOVA STORE / OFFERS</h3>
+                        <h1>
+                            <br>
+                            ELEVATING YOUR 
+                            <br>
+                            SHOPPING
+                            <br>
+                            EXPERIENCE!
+                        </h1>
+                    </div>
+                    <div id = "text4"><!--Last page right text-->
+                        <h2>Shop Now</h2>
+                        <img src = "{% static 'img/eclips.png' %}"></img><!--Load eclips image from img folder-->
+                        <img src = "{% static 'img/arrow.png'%}" class="img2"></img><!--Load arrow image from img folder-->
+                    </div>
+                </div>
+            </div>
+        </main><!--End of the main tag-->
+        <footer class="footer" id = "footer"><!--Footer section-->
+            
+                <button class="button" role="button"><!--Dashbording redirect button-->
+                    <span class="text">Shop Now</span><!--Button text-->
+                </button>
+            </a>
+        </footer><!--End of the footer section-->
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script><!--Load locomotive scroll js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!--Load Gasp javascript library-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!--Load Scroll Trigger js library-->
+        <script type="text/javascript" src="{% static 'js/index.js' %}"></script> <!--Insert Custom coded JavaScript--> 
+    </body>
 </html>
+
+<!--
+    A touch of brilliance by the mastermind, Ravindu Priyankara,😜😈
+    crafting elegance in code. 
+    EOF: The end of this masterpiece. 
+-->
