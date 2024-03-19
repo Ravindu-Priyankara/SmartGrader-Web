@@ -8,7 +8,7 @@ migrate:
 
 pylint:
 	@echo "please use pylint or flake8. im using flake8"
-	flake8 smartGrader/webApp/
+	flake8 --config=.flake8
 
 run:
 	@echo "Run the project ...."
