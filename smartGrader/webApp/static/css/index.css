@@ -151,7 +151,7 @@ canvas{
 #page2>#text1{
     position: absolute;
     top: 20%;
-    left: 2%;
+    right: 2%;
 }
 /* third page h3 inside text1  CSS code snippet */
 #page2>#text1>h3{
@@ -181,7 +181,7 @@ canvas{
 /* last page text3  CSS code snippet */
 #page3>#text3{
     position: absolute;
-    top: 35%;
+    top: 22%;
     left: 2%;
 }
 /* last page h3 inside text3  CSS code snippet */

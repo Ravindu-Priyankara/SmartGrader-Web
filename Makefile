@@ -4,7 +4,7 @@ venv:
 
 migrate:
 	@echo "Migration ......"
-	python smartGrader/manage.py 
+	python smartGrader/manage.py migrate
 
 pylint:
 	@echo "please use pylint or flake8. im using flake8"
