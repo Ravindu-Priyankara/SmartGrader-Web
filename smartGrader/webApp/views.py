@@ -6,3 +6,7 @@ from django.template import loader
 #index page view (landing page)
 def index(request):
     return render(request, 'index.html')
+
+# add login page view 
+def login(request):
+    return render(request, 'login.html')
