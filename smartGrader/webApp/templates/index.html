@@ -11,7 +11,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nova Store Landing</title>
+        <title>Smart Grader Landing</title>
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
         <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
@@ -84,7 +84,7 @@
             </div>
         </main><!--End of the main tag-->
         <footer class="footer" id = "footer"><!--Footer section-->
-            
+            <a href="{% url 'login' %}"><!--Add route to login-->
                 <button class="button" role="button"><!--Dashbording redirect button-->
                     <span class="text">Login Now</span><!--Button text-->
                 </button>
