@@ -1,15 +1,29 @@
 {%load static%}
+<!--/*
+*Created by Ravindu Priyankara for smartgrader login page 
+*2024-03-05
+*/-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Smart Grader Login</title>
-        <link rel="stylesheet" href="{% static 'css/login.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}"><!--load style css file-->
     </head>
     <body>
-        
+        <div class="container"><!--Set Container-->
+            <div class="card"><!--Add card to center of Container-->
+                <div class="form"><!--Login form style-->
+                    <h1 class="heading-login">Login</h1><!--Login header-->
+                    <form method="POST" action = ""><!--Login form start here-->
+                        <p class="heading-login">Still you have not account <a href=""><b><font color="red">Click this</font></b></a></p><br><!--Not rejistered users-->
+                        <input type="text" placeholder="E-mail Address" required class="input" name= "mail"><!--mail address-->
+                        <input type="password" placeholder="Password" required class="input" name = "password"><!--password field-->
+                        <button type="submit" class="submit-button">login</button><!--login button-->
+                    </form><!--End of the form-->
+                </div>
+            </div>
+        </div><!-- we are not using js validations because if you enter null value automatically php shows error message because we created all tables values as a not null.-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script><!--Gasp js library load-->
+        <script type="text/javascript" src="{% static 'js/login.js' %}"></script> <!--Insert Custom coded JavaScript--> 
     </body>
 </html>
