@@ -8,4 +8,5 @@ urlpatterns = [
     path('validate-login/', views.login_form_validate, name = 'validate_login'), # login form validate
     path('signup/',views.signup, name = 'signup'), #login page path(landing page)
     path('validate-signup/', views.validate_signup, name='validate_signup'),
+    path('view-users/', views.view_users, name='view_users'),
 ]
