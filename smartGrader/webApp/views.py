@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.template import loader
 from django.http import JsonResponse # use for get json resposes.
+from .models import CustomUser #import model
+
 
 # Create your views here.
 
@@ -44,7 +46,22 @@ def validate_signup(request): #signup validation
         if password != password1:
             return JsonResponse({'success': False, 'message': 'Passwords do not match'}, status=400)
         else:
-            # Perform further validation and save user data if needed
-            # Example: Save user to database
-            # user = User.objects.create(...)
+            # Create new user instance
+            user = CustomUser.objects.create_user(
+                email=email,
+                first_name=first_name,
+                last_name=last_name,
+                country=country,
+                profession=profession,
+                number=mobile_number,
+                password=password
+            )
+            
             return JsonResponse({'success': True})
+        
+def view_users(request):
+    # Fetch all registered users from the database
+    users = CustomUser.objects.all()
+
+    # Render a template with the list of users
+    return render(request, 'users.html', {'users': users})

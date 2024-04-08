@@ -35,3 +35,11 @@ pylint:
 run:
 	@echo "Run the project ...."
 	python smartGrader/manage.py runserver
+
+start:
+	@echo "\nStart Postgresql....\n"
+	brew services start postgresql
+
+stop:
+	@echo "\nEnd Postgresql....\n"
+	brew services stop postgresql
