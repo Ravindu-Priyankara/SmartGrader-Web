@@ -8,6 +8,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/login.css' %}"><!--load style css file-->
+    <title>SmartGrader SignIn</title>
 </head>
 <body>
     <div class="container"><!--Set Container-->
@@ -16,7 +17,7 @@
                 <h1 class="heading-login">Login</h1><!--Login header-->
                 <form id="login-form"><!--Login form start here-->
                     {% csrf_token %}
-                    <p class="heading-login">Still you have not account <a href=""><b><font color="red">Click this</font></b></a></p><br><!--Not registered users-->
+                    <p class="heading-login">Still you have not account <a href="{% url 'signup' %}"><b><font color="red">Click this</font></b></a></p><br><!--Not registered users-->
                     <input type="text" placeholder="E-mail Address" required class="input" name="mail"><!--mail address-->
                     <input type="password" placeholder="Password" required class="input" name="password"><!--password field-->
                     <button type="button" id="login-button" class="submit-button">login</button><!--login button-->

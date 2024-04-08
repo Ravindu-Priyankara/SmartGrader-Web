@@ -1,0 +1,91 @@
+{% load static %}
+<!--/*
+*Created by Ravindu Priyankara for smartgrader login page 
+*2024-03-05
+*/-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"><!--load style css file-->
+    <title>SmartGrader SignUp</title>
+</head>
+<body>
+    <div class="container"><!--Set Container-->
+        <div class="card"><!--Add card to center of Container-->
+            <div class="form"><!--Login form style-->
+                <h1 class="heading-login">SignUP</h1><!--Login header-->
+                <form id="signup-form"><!--Signup form start here-->
+                    {% csrf_token %}
+                    <p class="heading-login">Already have an account? <a href="{% url 'login' %}"><b><font color="red">Login here</font></b></a></p><br><!--Registered users-->
+                    <input type="text" placeholder="First name" required class="input" name="f_name">
+                    <input type="text" placeholder="Last name" required class="input" name="l_name">
+                    <input type="email" placeholder="E-mail Address" required class="input" name="mail">
+                    <input type="text" placeholder="Job" required class="input" name="profession">
+                    <input type="text" placeholder="Country" required class="input" name="country">
+                    <input type="text" placeholder="Mobile Number" required class="input" name="number">
+                    <input type="password" placeholder="Password" required class="input" name="password">
+                    <input type="password" placeholder="Retype Password" required class="input" name="password1">
+                    <button type="button" id="signup-button" class="submit-button">Sign Up</button><!--signup button-->
+                </form><!--End of the form-->
+            </div>
+        </div>
+    </div>
+    <!-- we are not using js validations because if you enter null value automatically php shows error message because we created all tables values as a not null.-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script><!--Gasp js library load-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // Function to get CSRF token from cookies
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = $.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // AJAX request for signup
+        $('#signup-button').click(function() {
+            var formData = $('#signup-form').serialize();
+            var csrftoken = getCookie('csrftoken');
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "validate_signup" %}', // Replace with your signup validation URL
+                headers: {
+                    'X-CSRFToken': csrftoken
+                },
+                data: formData,
+                success: function(response) {
+                    // Handle success
+                    if (response.success) {
+                        console.log('Sign up successful!');
+                        // Example: Redirect to another page
+                        window.location.href = '/dashboard';
+                    } else {
+                        console.error('Sign up failed:', response.message);
+                        // Example: Display error message to the user
+                        alert('Sign up failed: ' + response.message);
+                    }
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    // Handle error
+                    console.error('Error:', errorThrown);
+                    // Example: Display generic error message to the user
+                    alert('An error occurred while processing your request. Please try again later.');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

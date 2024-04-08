@@ -24,3 +24,27 @@ def login_form_validate(request):
         else:
             # Credentials are not valid
             return JsonResponse({'success': False, 'message': 'Invalid username or password'}, status=400)
+
+def signup(request): # signup page view
+    return render(request, 'signup.html')
+
+def validate_signup(request): #signup validation
+    if request.method == 'POST':
+        # Extract form data
+        first_name = request.POST.get('f_name')
+        last_name = request.POST.get('l_name')
+        email = request.POST.get('mail')
+        profession = request.POST.get('profession')
+        country = request.POST.get('country')
+        mobile_number = request.POST.get('number')
+        password = request.POST.get('password')
+        password1 = request.POST.get('password1')
+
+        # Perform validation (Example: Check if passwords match)
+        if password != password1:
+            return JsonResponse({'success': False, 'message': 'Passwords do not match'}, status=400)
+        else:
+            # Perform further validation and save user data if needed
+            # Example: Save user to database
+            # user = User.objects.create(...)
+            return JsonResponse({'success': True})
