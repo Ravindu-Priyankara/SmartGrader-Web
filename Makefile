@@ -64,3 +64,7 @@ log:
 restart:
 	@echo "\nRestart Postgresql....\n"
 	pg_ctl -D ~/db restart
+
+test:
+	@echo "\nPython testing\n"
+	python smartGrader/manage.py test

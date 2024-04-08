@@ -2,9 +2,29 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import JsonResponse # use for get json resposes.
 from .models import CustomUser #import model
+from django.contrib.auth import authenticate
+from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 
 
-# Create your views here.
+class SignupForm(forms.Form): #forms validation
+    first_name = forms.CharField(max_length=100)
+    last_name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    profession = forms.CharField(max_length=100)
+    country = forms.CharField(max_length=100)
+    mobile_number = forms.CharField(max_length=15)
+    password = forms.CharField(widget=forms.PasswordInput)
+    password1 = forms.CharField(widget=forms.PasswordInput)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get("password")
+        password1 = cleaned_data.get("password1")
+
+        if password != password1:
+            raise forms.ValidationError("Passwords do not match.")
+
 
 #index page view (landing page)
 def index(request):
@@ -18,9 +38,13 @@ def login_form_validate(request):
     if request.method == 'POST':
         username = request.POST.get('mail')
         password = request.POST.get('password')
+
+        print(username, password)
         
-        # Perform validation (Example: Check if username and password match)
-        if username == 'admin' and password == 'admin':
+        # Authenticate user against the database
+        user = authenticate(request, email=username, password=password)
+        
+        if user is not None:
             # Credentials are valid
             return JsonResponse({'success': True})
         else:
@@ -30,34 +54,27 @@ def login_form_validate(request):
 def signup(request): # signup page view
     return render(request, 'signup.html')
 
-def validate_signup(request): #signup validation
+def validate_signup(request):
     if request.method == 'POST':
-        # Extract form data
-        first_name = request.POST.get('f_name')
-        last_name = request.POST.get('l_name')
-        email = request.POST.get('mail')
-        profession = request.POST.get('profession')
-        country = request.POST.get('country')
-        mobile_number = request.POST.get('number')
-        password = request.POST.get('password')
-        password1 = request.POST.get('password1')
-
-        # Perform validation (Example: Check if passwords match)
-        if password != password1:
-            return JsonResponse({'success': False, 'message': 'Passwords do not match'}, status=400)
-        else:
-            # Create new user instance
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            # Form is valid, create user
+            data = form.cleaned_data
             user = CustomUser.objects.create_user(
-                email=email,
-                first_name=first_name,
-                last_name=last_name,
-                country=country,
-                profession=profession,
-                number=mobile_number,
-                password=password
+                email=data['email'],
+                first_name=data['first_name'],
+                last_name=data['last_name'],
+                country=data['country'],
+                profession=data['profession'],
+                number=data['mobile_number'],
+                password=data['password']
             )
-            
             return JsonResponse({'success': True})
+        else:
+            # Form is not valid, return errors
+            return JsonResponse({'success': False, 'errors': form.errors}, status=400)
+    else:
+        return JsonResponse({'success': False, 'message': 'Invalid request method'}, status=405)
         
 def view_users(request):
     # Fetch all registered users from the database
