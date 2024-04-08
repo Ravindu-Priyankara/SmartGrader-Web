@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'smartGrader.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'smartgrader',  # Use the correct database name here
+        'USER': 'ravindu',
+        'PASSWORD': 'ravi',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

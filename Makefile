@@ -60,3 +60,7 @@ connect:
 log:
 	@echo "\nLog Postgresql....\n"
 	pg_ctl -D ~/db -l db.log start
+
+restart:
+	@echo "\nRestart Postgresql....\n"
+	pg_ctl -D ~/db restart
