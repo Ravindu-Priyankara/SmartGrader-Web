@@ -36,10 +36,27 @@ run:
 	@echo "Run the project ...."
 	python smartGrader/manage.py runserver
 
+db:
+	@echo"\ncreate db\n"
+	mkdir db
+	initdb -D ~/db
+
 start:
 	@echo "\nStart Postgresql....\n"
-	brew services start postgresql
+	pg_ctl -D ~/db start || brew services start postgresql
 
 stop:
 	@echo "\nEnd Postgresql....\n"
-	brew services stop postgresql
+	pg_ctl -D ~/db stop || brew services stop postgresql
+
+status:
+	@echo "\nStatus Postgresql....\n"
+	pg_ctl -D ~/db status
+
+connect:
+	@echo "\nConnect Postgresql....\n"
+	psql -U ravindu -d smartgrader
+
+log:
+	@echo "\nLog Postgresql....\n"
+	pg_ctl -D ~/db -l db.log start
