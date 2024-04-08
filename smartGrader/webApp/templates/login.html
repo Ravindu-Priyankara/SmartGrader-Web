@@ -8,6 +8,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/login.css' %}"><!--load style css file-->
+    <title>SmartGrader SignIn</title>
 </head>
 <body>
     <div class="container"><!--Set Container-->
@@ -16,7 +17,7 @@
                 <h1 class="heading-login">Login</h1><!--Login header-->
                 <form id="login-form"><!--Login form start here-->
                     {% csrf_token %}
-                    <p class="heading-login">Still you have not account <a href=""><b><font color="red">Click this</font></b></a></p><br><!--Not registered users-->
+                    <p class="heading-login">Still you have not account <a href="{% url 'signup' %}"><b><font color="red">Click this</font></b></a></p><br><!--Not registered users-->
                     <input type="text" placeholder="E-mail Address" required class="input" name="mail"><!--mail address-->
                     <input type="password" placeholder="Password" required class="input" name="password"><!--password field-->
                     <button type="button" id="login-button" class="submit-button">login</button><!--login button-->
@@ -27,45 +28,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script><!--Gasp js library load-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    $(document).ready(function() {
-        // Function to get CSRF token from cookies
-        function getCookie(name) {
-            var cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                var cookies = document.cookie.split(';');
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = jQuery.trim(cookies[i]);
-                    // Does this cookie string begin with the name we want?
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
+        $(document).ready(function() {
+            // Function to get CSRF token from cookies
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
                     }
                 }
+                return cookieValue;
             }
-            return cookieValue;
-        }
-
-        // AJAX request
-        $('#login-button').click(function() {
-            var formData = $('#login-form').serialize();
-            var csrftoken = getCookie('csrftoken');
-
-            $.ajax({
-                type: 'POST',
-                url: '{% url "your_login_url" %}',
-                headers: {
-                    'X-CSRFToken': csrftoken
-                },
-                data: formData,
-                success: function(response) {
-                    // Handle success
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    // Handle error
-                }
+        
+            // AJAX request
+            $('#login-button').click(function() {
+                var formData = $('#login-form').serialize();
+                var csrftoken = getCookie('csrftoken');
+        
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "validate_login" %}',
+                    headers: {
+                        'X-CSRFToken': csrftoken
+                    },
+                    data: formData,
+                    success: function(response) {
+                        // Handle success
+                        if (response.success) {
+                            console.log('Login successful!');
+                            // Example: Redirect to another page
+                            window.location.href = '/dashboard';
+                        } else {
+                            console.error('Login failed:', response.message);
+                            // Example: Display error message to the user
+                            alert('Login failed: ' + response.message);
+                        }
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        // Handle error
+                        console.error('Error:', errorThrown);
+                        // Example: Display generic error message to the user
+                        alert('An error occurred while processing your request. Please try again later.');
+                    }
+                });
             });
         });
-    });
+        
     </script>
 </body>
 </html>

@@ -4,6 +4,7 @@ venv:
 
 migrate:
 	@echo "Migration ......"
+	python smartGrader/manage.py makemigrations
 	python smartGrader/manage.py migrate
 
 pylint:
