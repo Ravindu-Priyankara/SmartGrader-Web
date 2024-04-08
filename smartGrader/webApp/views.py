@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import JsonResponse # use for get json resposes.
 from .models import CustomUser #import model
+from django.contrib.auth import authenticate
 
 
 # Create your views here.
@@ -18,9 +19,13 @@ def login_form_validate(request):
     if request.method == 'POST':
         username = request.POST.get('mail')
         password = request.POST.get('password')
+
+        print(username, password)
         
-        # Perform validation (Example: Check if username and password match)
-        if username == 'admin' and password == 'admin':
+        # Authenticate user against the database
+        user = authenticate(request, email=username, password=password)
+        
+        if user is not None:
             # Credentials are valid
             return JsonResponse({'success': True})
         else:
