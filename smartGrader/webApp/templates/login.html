@@ -15,12 +15,12 @@
         <div class="card"><!--Add card to center of Container-->
             <div class="form"><!--Login form style-->
                 <h1 class="heading-login">Login</h1><!--Login header-->
-                <form id="login-form"><!--Login form start here-->
+                <form id="login-form" method="post" action= "{% url 'validate_login'%}"><!--Login form start here-->
                     {% csrf_token %}
                     <p class="heading-login">Still you have not account <a href="{% url 'signup' %}"><b><font color="red">Click this</font></b></a></p><br><!--Not registered users-->
                     <input type="text" placeholder="E-mail Address" required class="input" name="mail"><!--mail address-->
                     <input type="password" placeholder="Password" required class="input" name="password"><!--password field-->
-                    <button type="button" id="login-button" class="submit-button">login</button><!--login button-->
+                    <button type="submit" id="login-button" class="submit-button">login</button><!--login button-->
                 </form><!--End of the form-->
             </div>
         </div>
@@ -28,7 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script><!--Gasp js library load-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
+        /*$(document).ready(function() {
             // Function to get CSRF token from cookies
             function getCookie(name) {
                 var cookieValue = null;
@@ -60,9 +60,15 @@
                     data: formData,
                     success: function(response) {
                         // Handle success
+                        // Handle success
                         if (response.success) {
                             console.log('Login successful!');
-                            // Example: Redirect to another page
+                            // Check if user is authenticated and session key is provided
+                            if (response.is_authenticated && response.session_key) {
+                                // Set the session key in localStorage for future use
+                                localStorage.setItem('session_key', response.session_key);
+                            }
+                            // Redirect to dashboard
                             window.location.href = '/dashboard';
                         } else {
                             console.error('Login failed:', response.message);
@@ -78,7 +84,7 @@
                     }
                 });
             });
-        });
+        });*/
         
     </script>
 </body>

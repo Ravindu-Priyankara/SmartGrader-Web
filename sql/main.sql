@@ -4,3 +4,5 @@ GRANT ALL PRIVILEGES ON DATABASE smartgrader TO ravindu;
 
 /* registered users watch*/
 SELECT * FROM auth_user;
+
+GRANT CREATE ON DATABASE smartgrader TO ravindu;
