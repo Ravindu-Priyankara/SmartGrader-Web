@@ -85,6 +85,13 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
+    }
+}'''
 
 
 # Password validation
@@ -129,3 +136,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Add this line to your settings.py
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+# Add these lines to your settings.py
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Strict'
+SESSION_COOKIE_DOMAIN = None  # Set to your domain if necessary
+# Add this line to your settings.py
+SESSION_COOKIE_AGE = 86400  # 1 day in seconds
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # Add other authentication backends if needed
+]
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
