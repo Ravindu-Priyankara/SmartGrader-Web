@@ -137,7 +137,7 @@ def view_users(request):
 
 # user dashboard
 
-'''def dashboard(request):
+def dashboard(request):
     """if 'user_key' in request.session:
         session_key = request.session['user_key']
         print(session_key)
@@ -152,9 +152,9 @@ def view_users(request):
         return render(request, 'dashboard/index.html')
     else:
         # Session key is not provided, handle accordingly
-        return render(request, 'login.html')'''
+        return render(request, 'login.html')
 
-def dashboard(request):
+'''def dashboard(request):
     session_key = request.GET.get('session_key')
     if session_key:
         user = get_user_from_session(session_key)
@@ -163,4 +163,13 @@ def dashboard(request):
             return JsonResponse({'success': True, 'user_details': {'username': user.first_name, 'email': user.email}})
     
     return JsonResponse({'success': False, 'message': 'Failed to retrieve user details'})
+    
+    
+    def dashboard(request):
+    if 'user_key' in request.session:
+        session_key = request.session['user_key']
+        user = CustomUser.objects.get(session_key=session_key)
+        return render(request, 'dashboard/index.html', {'user': user})
+    else:
+        return render(request, 'login.html')'''
     
