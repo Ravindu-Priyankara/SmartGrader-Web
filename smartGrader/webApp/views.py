@@ -82,3 +82,7 @@ def view_users(request):
 
     # Render a template with the list of users
     return render(request, 'users.html', {'users': users})
+
+# user dashboard
+def dashboard(request):
+    return render(request, 'dashboard/index.html')
