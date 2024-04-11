@@ -1,1 +1,16 @@
-dashboard
+{% load static %}
+<!--/*
+*Created by Ravindu Priyankara for smartgrader dashboard page 
+*2024-04-11
+*/-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SmartGrader Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"><!-- Load CSS file -->
+</head>
+<body>
+    {% include 'dashboard/components/navbar.html' %}
+</body>
+</html>
