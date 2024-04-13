@@ -10,6 +10,8 @@ from django.contrib.sessions.models import Session
 from django.utils import timezone
 from django.contrib.sessions.backends.db import SessionStore
 from django.shortcuts import redirect
+from .forms import FileUploadForm
+from .forms import validate_pdf
 
 def generate_session_key(length=32):
     """
@@ -96,7 +98,7 @@ def login_form_validate(request):
                 session_key = generate_session_key()
 
             # Set expiration date for the session
-            request.session.set_expiry(timezone.timedelta(days=1))
+            request.session.set_expiry(timezone.timedelta(hours=1))
             #return JsonResponse({'success': True, 'is_authenticated': True, 'session_key': session_key})
             return redirect('/dashboard/?session_key={}'.format(session_key))
         else:
@@ -172,4 +174,19 @@ def dashboard(request):
         return render(request, 'dashboard/index.html', {'user': user})
     else:
         return render(request, 'login.html')'''
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = FileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            # Handle file upload
+            uploaded_file = request.FILES['file']
+            validate_pdf(uploaded_file)
+            
+            # Process the file (e.g., save it to the server)
+            # You can also access form data using form.cleaned_data
+            return render(request, 'success.html', {'uploaded_file': uploaded_file})
+    else:
+        form = FileUploadForm()
+    return render(request, 'upload.html', {'form': form})
     

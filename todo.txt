@@ -1,0 +1,2 @@
+configure 404 , 302 like errors
+form validate if user upload another format
