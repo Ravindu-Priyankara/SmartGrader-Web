@@ -146,7 +146,7 @@ SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = 'Strict'
 SESSION_COOKIE_DOMAIN = None  # Set to your domain if necessary
 # Add this line to your settings.py
-SESSION_COOKIE_AGE = 86400  # 1 day in seconds
+SESSION_COOKIE_AGE = 3600  # 1 hour in seconds
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

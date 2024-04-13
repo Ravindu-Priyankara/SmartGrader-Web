@@ -11,4 +11,5 @@ urlpatterns = [
     path('validate-signup/', views.validate_signup, name='validate_signup'),
     path('view-users/', views.view_users, name='view_users'),
     path('dashboard/', dashboard, name='dashboard'), # dashboard url 
+    path('upload/', views.upload_file, name='upload_file'), # upload pdf file
 ]
