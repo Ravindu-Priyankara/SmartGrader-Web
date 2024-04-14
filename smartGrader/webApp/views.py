@@ -12,6 +12,8 @@ from django.contrib.sessions.backends.db import SessionStore
 from django.shortcuts import redirect
 from .forms import FileUploadForm
 from .forms import validate_pdf
+from PyPDF2 import PdfReader
+import re
 
 def generate_session_key(length=32):
     """
@@ -182,10 +184,41 @@ def upload_file(request):
             # Handle file upload
             uploaded_file = request.FILES['file']
             validate_pdf(uploaded_file)
-            
-            # Process the file (e.g., save it to the server)
-            # You can also access form data using form.cleaned_data
-            return render(request, 'success.html', {'uploaded_file': uploaded_file})
+            #convert
+            pdf_file = uploaded_file
+            # Read the PDF file
+            pdf_reader = PdfReader(pdf_file)
+            # Extract text from each page
+            extracted_text = ''
+            for page in pdf_reader.pages:
+                extracted_text += page.extract_text()
+
+            print(extracted_text[0])
+            name_match = re.search(r'Name\s*=\s*(.*?)\n', extracted_text)
+            id_match = re.search(r'Id\s*=\s*(.*?)\n', extracted_text)
+            question1_match = re.search(r'1\.(.*?)\n(.*?)\n', extracted_text)
+            question2_match = re.search(r'2\.\s*(.*?)\s*?\n\s*(.*?)\n', extracted_text)
+            print(question2_match)
+            print(question2_match.group(0))
+            return render(request, 'success.html')
+
+             # Use regular expressions to find specific data
+            '''
+            name_match = re.search(r'Name\s*=\s*(.*?)\n', extracted_text)
+            id_match = re.search(r'Id\s*=\s*(.*?)\n', extracted_text)
+            question1_match = re.search(r'1\.(.*?)\n(.*?)\n', extracted_text)
+            question2_match = re.search(r'2\.(.*?)\n(.*?)\n', extracted_text)
+            if name_match and id_match and question1_match and question2_match:
+                name = name_match.group(1)
+                id = id_match.group(1)
+                question1 = question1_match.group(1)
+                answer1 = question1_match.group(2)
+                question2 = question2_match.group(1)
+                #answer2 = question2_match.group(2)
+                return render(request, 'success.html', {'name': name, 'id': id, 'question1': question1, 'answer1': answer1, 'question2': question2})
+            else:
+                error_message = "Failed to extract data from the PDF. Make sure the format matches the expected pattern."
+                return render(request, 'index.html', {'error_message': error_message})'''
     else:
         form = FileUploadForm()
     return render(request, 'upload.html', {'form': form})
