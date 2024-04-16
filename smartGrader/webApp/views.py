@@ -15,7 +15,7 @@ from .forms import validate_pdf
 from PyPDF2 import PdfReader
 
 import re
-from .aiModel import check_answer
+from .aiModel import *
 
 
 
@@ -204,9 +204,10 @@ def upload_file(request):
             id_match = re.search(r'Id\s*=\s*(.*?)\n', extracted_text)
             question1_match = re.search(r'1\.(.*?)\n(.*?)\n', extracted_text)
             question2_match = re.search(r'2\.\s*(.*?)\s*?\n\s*(.*?)\n', extracted_text)
-            #print(question2_match)
-            #print(question2_match.group(0))
 
+            
+            data = get_data(extracted_text)
+            print(data)
 
             value = check_answer(question1_match.group(0),question1_match.group(1))
             print(value)

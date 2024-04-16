@@ -5,7 +5,7 @@ import pandas as pd
 from transformers import BertForSequenceClassification, BertTokenizerFast, pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+import re
 
 
 def load_json_file(filename):
@@ -99,3 +99,30 @@ def check_answer(question, answer):
         
 
     return "InCorrect"
+
+def extract_questions_from_text(extracted_text):
+    questions = []
+    answers = []
+    i = 1
+    while True:
+        question_match = re.search(rf'{i}\.(.*?)\n(.*?)\n', extracted_text, re.DOTALL)
+        if question_match is None:
+            break
+        else:
+            question_text = question_match.group(1).strip() # add questions
+            questions.append(question_text)
+            answer_match = question_match.group(2).strip() # add questions
+            answers.append(answer_match)
+            print(f"Question {i}: {question_text}")
+            i += 1
+    return questions, answers
+
+def get_data(extracted_text):
+    checks = []
+    questions, answers = extract_questions_from_text(extracted_text)
+
+    for question, answer in zip(questions, answers):
+        data = check_answer(question, answer)
+        checks.append(data)
+
+    return checks
