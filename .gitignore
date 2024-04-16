@@ -162,3 +162,4 @@ cython_debug/
 .DS_Store
 smartGrader/.DS_Store
 smartGrader/webApp/.DS_Store
+smartGrader/webApp/smg_model/
