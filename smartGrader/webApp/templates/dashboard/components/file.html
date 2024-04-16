@@ -1,15 +1,37 @@
 {%load static%}
 <main>
     <link rel="stylesheet" href="{% static 'css/dashboard/components/file.css' %}"><!-- Load CSS file -->
-    <h3>The year earth</h3>
-    <h1>CHANGED</h1>
+    <h3>Transforming Assignments</h3>
+    <h1>Empowering Minds</h1>
+    <style>
+      input[type="file"] {
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        padding: 5px;
+        position: relative;
+        top: 3.2rem;
+        left: 20%;
+      }
+      
+      input[type="file"]::file-selector-button {
+        background-color: #8b5cf6;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color .3s ease;
+        
+      }
+    </style>
     <form method="post" enctype="multipart/form-data" action = '/upload/'>
       {% csrf_token %}
       {{ form.as_p }}
-      <input type="file" name="file"> 
+      <input type="file" name="file" > 
       <pi class="button1" id="downloadBtn">Cancel</pi>
       <button class="button1" type= "submit">Submit</button>
-      <p>narrated by <br>David Attenborough</p>
+      <p>Submit your Assignments</p>
     </form>
     <div id="chameleon"></div>
   </main>

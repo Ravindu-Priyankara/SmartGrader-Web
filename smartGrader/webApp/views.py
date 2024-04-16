@@ -13,7 +13,11 @@ from django.shortcuts import redirect
 from .forms import FileUploadForm
 from .forms import validate_pdf
 from PyPDF2 import PdfReader
+
 import re
+from .aiModel import *
+
+
 
 def generate_session_key(length=32):
     """
@@ -177,6 +181,8 @@ def dashboard(request):
     else:
         return render(request, 'login.html')'''
 
+
+
 def upload_file(request):
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)
@@ -198,8 +204,14 @@ def upload_file(request):
             id_match = re.search(r'Id\s*=\s*(.*?)\n', extracted_text)
             question1_match = re.search(r'1\.(.*?)\n(.*?)\n', extracted_text)
             question2_match = re.search(r'2\.\s*(.*?)\s*?\n\s*(.*?)\n', extracted_text)
-            print(question2_match)
-            print(question2_match.group(0))
+
+            
+            data = get_data(extracted_text)
+            print(data)
+
+            value = check_answer(question1_match.group(0),question1_match.group(1))
+            print(value)
+
             return render(request, 'success.html')
 
              # Use regular expressions to find specific data
