@@ -28,7 +28,7 @@
              "A compiler is a program that translates the entire source code into machine code or an intermediate form prior to execution, typically producing a standalone executable file. In contrast, an interpreter executes the code directly from the source without creating a separate compiled output.",
              "When it comes to processing code, a compiler translates the complete source code into machine code or an intermediate form before execution, resulting in a separate compiled output. Conversely, an interpreter interprets and executes the code in real-time, without producing a compiled file."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"Ramandrom",
@@ -57,7 +57,7 @@
              "The primary difference between RAM and ROM lies in their functionality and volatility. RAM is volatile memory that stores data temporarily while the computer is running, enabling quick data access and modification. However, it loses its data when the power is turned off. ROM, on the other hand, is non-volatile memory that stores essential firmware and software, retaining its content even when the computer is not powered.",
              "RAM and ROM are two distinct types of computer memory with contrasting characteristics. RAM is volatile memory used for temporary data storage during a computer's active operation. It allows for fast data access and modification but loses its data when the computer is powered off. ROM, in contrast, is non-volatile memory that stores permanent firmware and software, serving as a critical component for booting and initializing the computer."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"datastructure",
@@ -85,7 +85,7 @@
              "A data structure is a method for storing and arranging data to perform operations effectively. An example of a data structure is a linked list, which consists of nodes where each node contains data and a reference to the next node, allowing dynamic data organization.",
              "In the realm of computer science, a data structure is a way of structuring and storing data for efficient processing. An example of a data structure is a hash map, used for key-value pair storage and rapid retrieval of values based on their associated keys."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"computerscience",
@@ -113,7 +113,7 @@
              "The concept of abstraction in computer science entails creating simplified representations of complex systems. It allows developers to work with high-level models, abstracting away intricate technical aspects for better clarity and manageability.",
              "Abstraction in computer science is the practice of creating simplified, high-level models of complex systems. This simplification makes it easier for developers to interact with and manipulate these systems, without having to deal with intricate details."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"process",
@@ -141,7 +141,7 @@
              "The kernel serves as the heart of an operating system, managing hardware resources and ensuring the seamless execution of software applications.",
              "In summary, the kernel in an operating system is the core software component that facilitates hardware interaction, memory management, and process control, making it essential for the functioning of the system."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"turing",
@@ -169,7 +169,7 @@
              "Recursion is central to computer science theory and practice, serving as a tool for elegant problem-solving and algorithm development.",
              "The study of recursion in computer science has led to a deeper understanding of computational processes and has paved the way for innovative solutions in various fields."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"framework",
@@ -198,7 +198,7 @@
              "A software framework is a structured platform that streamlines application development by providing reusable components and tools. An example is Laravel, a PHP framework for web application development.",
              "In the realm of computer science, a software framework is a structured environment that simplifies application development by offering reusable components and tools. An example is Flask, a lightweight Python web framework."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"bigonotation",
@@ -226,7 +226,7 @@
              "In computer science, Big O notation is a mathematical notation that specifies the upper bound of an algorithm's time complexity. Its purpose in algorithm analysis is to provide a standardized and abstract way to measure and compare the efficiency of algorithms, emphasizing their worst-case performance. This notation is crucial for making informed decisions about algorithm selection and optimization.",
              "Big O notation is a mathematical notation used in computer science to describe the upper limit of an algorithm's time complexity. Its purpose in algorithm analysis is to facilitate the standardized and concise evaluation and comparison of algorithm efficiency, particularly in worst-case scenarios. It empowers individuals to make informed decisions about algorithm selection and optimization."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"lowlevel",
@@ -254,7 +254,7 @@
              "The difference between high-level and low-level programming languages primarily stems from the level of abstraction. High-level languages provide abstractions and user-friendly syntax, simplifying code development. Low-level languages, on the other hand, offer more control over hardware but require manual memory management and more intricate code. The key distinction is the trade-off between ease of use and control over system resources.",
              "The choice between a high-level and low-level programming language involves considering the level of abstraction. High-level languages simplify coding with abstractions, built-in functions, and automated memory management. Low-level languages offer more control over hardware but require manual memory management and intricate code. The key distinction is the trade-off between ease of programming and control over system resources."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"oop",
@@ -282,7 +282,7 @@
              "Object-oriented programming (OOP) is a programming paradigm that emphasizes the use of objects to model real-world entities. These objects encapsulate data and functions that work on the data. OOP principles include encapsulation, which hides object internals, inheritance, which enables class creation based on existing classes, and polymorphism, which allows for uniform treatment of objects. OOP has revolutionized software development by promoting code organization, reusability, and maintainability.",
              "The concept of object-oriented programming (OOP) has revolutionized the field of software development. OOP is a programming paradigm that leverages objects to represent real-world entities, where each object contains data and functions. It is grounded in principles such as encapsulation, which hides object details, inheritance, which enables class creation based on existing classes, and polymorphism, which allows for uniform treatment of objects. OOP enhances code organization, reusability, and maintainability in software development."
           ],
-          "context_set": ""
+          "context_set": "CS"
        },
        {
           "tag":"DBMS",
@@ -310,7 +310,7 @@
              "DBMS is software that enables users to interact with databases. An example includes Apache Cassandra.",
              "A DBMS is a crucial system for handling databases, and an example is Redis, known for its key-value store functionality."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"sqlpurpose",
@@ -338,7 +338,7 @@
              "The primary goal of SQL is to provide a declarative language for querying and managing structured data.",
              "SQL is a powerful tool that streamlines the process of interacting with and extracting meaningful information from databases."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"foreignkey",
@@ -366,7 +366,7 @@
              "A primary key uniquely identifies records in a database table, and foreign keys are used to create associations between tables based on these unique identifiers.",
              "Primary keys serve as unique identifiers for records in a table, and foreign keys establish connections between tables by referencing the primary key of related records."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"nosql",
@@ -394,7 +394,7 @@
              "A NoSQL database is well-suited for scenarios where horizontal scalability, high availability, and fault tolerance are essential. It is particularly advantageous in distributed systems, providing resilience and efficient data management in situations where traditional databases may struggle.",
              "The suitability of a NoSQL database is evident in applications requiring fast and iterative development, as well as those dealing with constantly changing data requirements. Its schema-less nature and adaptability make it an ideal choice for projects with evolving business needs."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"storage",
@@ -422,7 +422,7 @@
              "Data integrity and organization are maintained by the file system, ensuring reliable storage and retrieval processes.",
              "Overall, the file system is instrumental in maintaining order, accessibility, and security in the realm of data storage."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"advsdisadv",
@@ -450,7 +450,7 @@
              "The perks of using a DBMS include enhanced data organization and standardization, while potential pitfalls may include vendor lock-in and dependency on proprietary technology.",
              "Integrating a DBMS into a system can lead to better data security and compliance with regulatory standards, but it may also introduce single points of failure and potential performance degradation."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"threelevel",
@@ -478,7 +478,7 @@
              "In a DBMS's three-level architecture, the external level provides an interface for users to access data. The conceptual level represents the logical structure of the entire database. The internal level manages storage structures and access methods.",
              "A DBMS's three-level architecture involves the external, conceptual, and internal levels. Users interact with the external level, which provides views tailored to their needs. The conceptual level represents the overall logical structure of the database, while the internal level handles storage and retrieval mechanisms."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"model",
@@ -506,7 +506,7 @@
              "Neglecting the implementation of a data model in DBMS can lead to various consequences. Without a clear data model, databases may suffer from inefficiencies, inconsistencies, and data anomalies. This can impede data management processes, hinder application development, and compromise the reliability of the system.",
              "In summary, a data model is a foundational concept in DBMS, providing a blueprint for organizing and structuring data within a database. Understanding data models is essential for designing efficient databases, ensuring data integrity, and optimizing the performance of database management systems."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"DML",
@@ -534,7 +534,7 @@
              "The functional disparities between DML and DDL are rooted in their purposes: DML is for data manipulation tasks, whereas DDL is for defining the structure of the data.",
              "What distinguishes DML from DDL is their roles in database management systems: DML facilitates data manipulation operations, while DDL facilitates the definition and modification of the database structure."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"redundancy",
@@ -562,7 +562,7 @@
              "DBMS reduces data redundancy by structuring data in a normalized form and enforcing constraints to maintain data consistency and integrity.",
              "Normalization techniques and integrity constraints enforced by a DBMS are key mechanisms for minimizing data redundancy and ensuring the efficiency and reliability of data storage."
           ],
-          "context_set": ""
+          "context_set": "DBMS"
        },
        {
           "tag":"protocol",
@@ -590,7 +590,7 @@
              "Adhering to network protocols is significant for maintaining compatibility and consistency in network communications.",
              "Network protocols contribute to network security by defining mechanisms for authentication, encryption, and access control."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"osi",
@@ -618,7 +618,7 @@
              "The OSI model's abstraction layers offer a clear separation of concerns, allowing for modular design and implementation of network protocols. This modular approach enhances scalability and flexibility in network architectures.",
              "Overall, the OSI model serves as a foundational framework for network design, implementation, and troubleshooting, guiding engineers in building robust and efficient communication systems."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"transportlayer",
@@ -646,7 +646,7 @@
              "The Transport Layer in the OSI model addresses challenges such as data integrity, sequencing, and congestion.",
              "The advantages provided by the Transport Layer within the OSI model include reliable data delivery and efficient communication."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"tcpvsudp",
@@ -674,7 +674,7 @@
              "TCP segments data into smaller packets for transmission and reassembles them at the receiving end, while UDP transmits data in datagrams, preserving message boundaries.",
              "TCP offers congestion control algorithms to manage network congestion and optimize data throughput, which is absent in UDP."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"router",
@@ -702,7 +702,7 @@
              "Routers are fundamental networking devices responsible for directing data packets between networks. Their role in packet forwarding involves inspecting destination addresses and determining optimal routes to ensure packets reach their destinations promptly.",
              "A router, in networking, is crucial for directing data packets across networks. In packet forwarding, routers analyze destination addresses and utilize routing algorithms to determine the most efficient paths for packet transmission. "
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"iot",
@@ -730,7 +730,7 @@
              "The Internet of Things (IoT) works by equipping everyday objects with sensors, actuators, and connectivity, enabling them to communicate and exchange data with other devices and systems. This interconnected ecosystem facilitates seamless integration, automation, and intelligent decision-making.",
              "IoT operates through the integration of sensors, actuators, and communication technology in physical objects, allowing them to collect and exchange data over the internet. This interconnected network of devices enables new opportunities for efficiency, optimization, and innovation across various industries."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"edge",
@@ -758,7 +758,7 @@
              "Edge computing optimizes data processing in IoT networks by distributing computation tasks across edge devices, reducing latency and enabling real-time analytics on the data stream.",
              "Real-world examples of edge computing in IoT include smart city applications, industrial automation systems, autonomous vehicles, and wearable health monitoring devices, all of which leverage edge computing for improved performance and efficiency."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"nic",
@@ -786,7 +786,7 @@
              "The functionality of a network interface card (NIC) encompasses tasks such as packet transmission, error detection, and protocol handling, crucial for network communication.",
              "By integrating with the computer's operating system and network protocols, a network interface card (NIC) facilitates seamless communication between devices in a networked environment."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"nettype",
@@ -814,7 +814,7 @@
              "Wireless networks offer the advantage of easy deployment and accessibility, making them suitable for temporary setups or situations where running cables is impractical. However, they are more susceptible to interference and security threats.",
              "One advantage of wired networks is their consistent and reliable performance, making them ideal for applications that require low latency and high bandwidth. However, the physical constraints of cables can limit flexibility and mobility."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"packet",
@@ -842,7 +842,7 @@
              "The efficiency of packet switching in data transmission is influenced by factors such as packet size, network congestion, and routing algorithms.",
              "The evolution of packet switching has revolutionized data transmission technology, enabling the creation of robust and scalable networks capable of handling diverse traffic types."
           ],
-          "context_set": ""
+          "context_set": "CN"
        },
        {
           "tag":"CSY",
@@ -870,7 +870,7 @@
              "Encryption has profound implications for cybersecurity practices, enabling organizations to meet compliance requirements, protect sensitive information, and uphold the confidentiality of data.",
              "Encryption enhances cybersecurity by providing a secure framework for data transmission and storage, thereby ensuring the confidentiality, integrity, and authenticity of digital information."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"firewall",
@@ -898,7 +898,7 @@
              "A firewall plays a critical role in network defense by monitoring and controlling the flow of traffic between internal and external networks. Through packet inspection and rule enforcement, it helps mitigate security risks, such as unauthorized access, malware infections, and data breaches.",
              "At its essence, a firewall is a barrier between a network and the outside world, evaluating all incoming and outgoing traffic. By applying predefined rules, it decides which packets are allowed to pass through and which are blocked, thereby enhancing the network's security posture."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"vulnerability",
@@ -926,7 +926,7 @@
              "Cybersecurity vulnerabilities are weaknesses in software, hardware, or organizational practices that can be exploited by attackers. To mitigate these risks, organizations should regularly audit their IT infrastructure, conduct thorough security assessments, and implement robust access controls.",
              "Cybersecurity vulnerabilities refer to weaknesses in systems or processes that could be exploited to breach security defenses. Mitigation efforts should focus on implementing intrusion detection systems, conducting regular security audits, and fostering a culture of security awareness among employees."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"forensics",
@@ -954,7 +954,7 @@
              "Digital forensics principles in cybersecurity promote the use of validated tools and techniques to ensure the admissibility and reliability of digital evidence in legal proceedings.",
              "The principles of digital forensics in cybersecurity align with established investigative methodologies, such as the Scientific Method, to ensure systematic and thorough analysis of digital evidence."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"dos",
@@ -982,7 +982,7 @@
              "Denial-of-service (DoS) attacks operate by inundating the target system or network with an excessive volume of malicious traffic or requests, hindering its ability to serve legitimate users.",
              "A denial-of-service (DoS) attack entails the deliberate inundation of a target system or network with malicious traffic or requests, causing it to become unresponsive or unavailable to legitimate users."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"2fa",
@@ -1010,7 +1010,7 @@
              "The adoption of two-factor authentication (2FA) is crucial for safeguarding digital assets as it adds an extra layer of verification, making it harder for unauthorized users to gain access.",
              "Two-factor authentication (2FA) helps mitigate security risks effectively by requiring users to provide two different authentication factors, thereby reducing the likelihood of successful unauthorized access attempts."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"blockchain",
@@ -1038,7 +1038,7 @@
              "Blockchain, in the context of cryptocurrencies, is a distributed ledger technology that ensures the integrity and security of transactions without relying on a central authority. It allows for transparent and decentralized peer-to-peer transactions.",
              "Blockchain technology is the underlying framework for cryptocurrencies, providing a decentralized and transparent ledger for recording transactions. It ensures security, immutability, and trust in peer-to-peer transactions without the need for intermediaries."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"vpns",
@@ -1066,7 +1066,7 @@
              "Virtual private networks (VPNs) enable bypassing geo-restrictions by masking users' IP addresses and routing internet traffic through servers located in different regions.",
              "Potential drawbacks or limitations of virtual private networks (VPNs) may include reduced internet speed due to encryption overhead, compatibility issues with certain applications, and reliance on third-party VPN providers."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"monitor",
@@ -1094,7 +1094,7 @@
              "Continuous monitoring differs from periodic assessments in cybersecurity by providing real-time visibility into security events and vulnerabilities, whereas periodic assessments are conducted at scheduled intervals.",
              "Integrating continuous monitoring into a cybersecurity strategy offers benefits such as improved threat detection capabilities, faster incident response times, and enhanced overall security posture."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        },
        {
           "tag":"impcsy",
@@ -1122,7 +1122,7 @@
              "In today's digital age, computer security is essential for preserving trust in online interactions and ensuring the resilience of digital ecosystems against cyber threats that can disrupt services and undermine confidence.",
              "Computer security is vital in today's digital age because it empowers individuals and organizations to protect their digital assets, maintain control over their online presence, and mitigate the risks posed by malicious actors and cyber threats."
           ],
-          "context_set": ""
+          "context_set": "CNAS"
        }
     ]
  }  

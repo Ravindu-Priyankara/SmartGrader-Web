@@ -199,20 +199,32 @@ def upload_file(request):
             for page in pdf_reader.pages:
                 extracted_text += page.extract_text()
 
-            print(extracted_text[0])
+            #print(extracted_text[0])
             name_match = re.search(r'Name\s*=\s*(.*?)\n', extracted_text)
             id_match = re.search(r'Id\s*=\s*(.*?)\n', extracted_text)
             question1_match = re.search(r'1\.(.*?)\n(.*?)\n', extracted_text)
             question2_match = re.search(r'2\.\s*(.*?)\s*?\n\s*(.*?)\n', extracted_text)
 
-            
+            remover('data.log')
             data = get_data(extracted_text)
-            print(data)
+            plagarism_data = get_plagarism(extracted_text)
 
-            value = check_answer(question1_match.group(0),question1_match.group(1))
-            print(value)
+            name = name_match.group(1).strip()
+            id = id_match.group(1).strip()
+            percentage = get_percentage(data)
+            plagarism_percentage = get_percentage(plagarism_data)
+            decrypted_data = read_encrypted_data()
+            radar_values = read_encrypted_data()
+            decrypted_data = list(set(decrypted_data))
+            count_value = count(radar_values)
+            #print(count_value)
+            #print(percentage)
+            
 
-            return render(request, 'success.html')
+            '''value = check_answer(question1_match.group(0),question1_match.group(1))
+            print(value)'''
+
+            return render(request, 'dashboard/student.html',{'percentage_correct': percentage, 'decrypted_data': decrypted_data, 'count':count_value, 'plagarism': plagarism_percentage})
 
              # Use regular expressions to find specific data
             '''
