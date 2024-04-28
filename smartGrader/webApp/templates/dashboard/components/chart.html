@@ -1,0 +1,41 @@
+{% load static %}
+<h1>Percentage of Correct Answers</h1>
+    <canvas id="percentageChart" width="100" height="100"></canvas>
+
+    <script>
+        // JavaScript code to render Chart.js chart
+        var ctx = document.getElementById('percentageChart').getContext('2d');
+        var percentage = {{ percentage_correct }};
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Correct', 'Incorrect'],
+                datasets: [{
+                    label: 'Percentage',
+                    data: [percentage, 100 - percentage], // Calculate percentage of incorrect answers
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)', // Blue for correct
+                        'rgba(255, 99, 132, 0.2)' // Red for incorrect
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Percentage of Correct Answers'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>

@@ -207,12 +207,16 @@ def upload_file(request):
 
             
             data = get_data(extracted_text)
-            print(data)
 
-            value = check_answer(question1_match.group(0),question1_match.group(1))
-            print(value)
+            name = name_match.group(1).strip()
+            id = id_match.group(1).strip()
+            percentage = get_percentage(data)
+            
 
-            return render(request, 'success.html')
+            '''value = check_answer(question1_match.group(0),question1_match.group(1))
+            print(value)'''
+
+            return render(request, 'dashboard/student.html',{'percentage_correct': percentage})
 
              # Use regular expressions to find specific data
             '''
