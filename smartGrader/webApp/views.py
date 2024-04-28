@@ -205,18 +205,23 @@ def upload_file(request):
             question1_match = re.search(r'1\.(.*?)\n(.*?)\n', extracted_text)
             question2_match = re.search(r'2\.\s*(.*?)\s*?\n\s*(.*?)\n', extracted_text)
 
-            
+            remover('data.log')
             data = get_data(extracted_text)
 
             name = name_match.group(1).strip()
             id = id_match.group(1).strip()
             percentage = get_percentage(data)
+            decrypted_data = read_encrypted_data()
+            radar_values = read_encrypted_data()
+            decrypted_data = list(set(decrypted_data))
+            count_value = count(radar_values)
+            print(count_value)
             
 
             '''value = check_answer(question1_match.group(0),question1_match.group(1))
             print(value)'''
 
-            return render(request, 'dashboard/student.html',{'percentage_correct': percentage})
+            return render(request, 'dashboard/student.html',{'percentage_correct': percentage, 'decrypted_data': decrypted_data, 'count':count_value})
 
              # Use regular expressions to find specific data
             '''

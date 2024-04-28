@@ -15,8 +15,14 @@
 <body>
     {% include 'dashboard/components/navbar.html' %}
     <h1>Percentage of Correct Answers</h1>
-    <div class="card">
+    <div class="pie">
         <canvas id="percentageChart" width="100" height="100"></canvas>
+    </div>
+    <div class="donut">
+        <canvas id="donutChart" width="200" height="200"></canvas> <!-- Add canvas for donut chart -->
+    </div>
+    <div class="radar">
+        <canvas id="radarChart" width="200" height="200"></canvas> <!-- Add canvas for radar chart -->
     </div>
 
     <script>
@@ -55,6 +61,70 @@
                 }
             }
         });
+        // Render the donut chart using Chart.js
+            var ctx2 = document.getElementById('donutChart').getContext('2d');
+            var data = {
+                labels: {{ decrypted_data|safe }},
+                datasets: [{
+                    data: {{count|safe}},  // Placeholder values, replace with your data
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],  // Colors for the donut segments
+                }]
+            };
+            var options = {
+                cutoutPercentage: 70,  // Adjust the size of the hole in the middle
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Percentage of Question Types'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            };
+            var donutChart = new Chart(ctx2, {
+                type: 'doughnut',
+                data: data,
+                options: options
+            });
+        // Render the radar chart using Chart.js
+        var ctx3 = document.getElementById('radarChart').getContext('2d');
+        var radarChart = new Chart(ctx3, {
+            type: 'radar',
+            data: {
+                labels: {{ decrypted_data|safe }},
+                datasets: [{
+                    label: 'Scores',
+                    data: {{ count|safe }},  // Placeholder values, replace with your data
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',  // Red background color
+                    borderColor: 'rgba(255, 99, 132, 1)',  // Red border color
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 10  // Adjust the maximum value as needed
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Question Spreadsheet'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        
     </script>
     
 </body>

@@ -6,6 +6,13 @@ from transformers import BertForSequenceClassification, BertTokenizerFast, pipel
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
+from .encrypt import *
+from collections import Counter
+
+def count(value):
+    counts = Counter(value)
+    count_list = [count for _, count in counts.items()]
+    return count_list
 
 
 def load_json_file(filename):
@@ -32,9 +39,27 @@ def extract_json_info(json_file, df):
                 
     return df
 
+def remover(file_name):
+    with open(file_name, "w") as file:
+        pass
+
+
 def collector(value):
-    with open("data.log", 'a') as file:
-        file.write(value[0])
+    # Encrypt the value
+    encrypted_value = encrypt_data(value[0])
+    
+    # Write the encrypted value to the file in append mode
+    with open("data.log", 'ab') as file:  # Use binary mode for appending encrypted data
+        file.write(encrypted_value + b'\n')
+
+# Read the encrypted data from the file
+def read_encrypted_data():
+    encrypted_data = []
+    with open("data.log", 'rb') as file:  # Use binary mode for reading encrypted data
+        for line in file:
+            encrypted_data.append(line.strip())
+    encrypt_data = decrypt_data(encrypted_data)
+    return encrypt_data
 
 
 def ai_model(data):
