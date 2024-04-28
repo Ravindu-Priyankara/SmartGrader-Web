@@ -133,7 +133,7 @@ def ai_model(data):
     #print(f"smartgrader: {response}\n\n")
     #return response
 
-def check_answer(question, answer):
+def check_answer(question, answer, value):
     # User's answer stored in 'answer1' variable
     user_answer = answer
     all_responses = ai_model(question)
@@ -151,7 +151,7 @@ def check_answer(question, answer):
         similarity = cosine_similarity(vectors[0], vectors[1])[0][0]
 
         # Set a threshold for similarity
-        threshold = 0.4  # You can adjust this threshold as needed(0.8 preferred)
+        threshold = value  # You can adjust this threshold as needed(0.8 preferred)
 
         # Compare similarity with threshold
         if similarity >= threshold:
@@ -195,7 +195,7 @@ def extract_questions_from_text(extracted_text):
     for question_match in question_matches:
         question_number, question_text = question_match
         questions.append(question_text.strip())
-        print(f"Question {question_number}: {question_text.strip()}")
+        #print(f"Question {question_number}: {question_text.strip()}")
 
     # Find the answer match
     answer_match = re.search(answer_pattern, extracted_text)
@@ -206,8 +206,8 @@ def extract_questions_from_text(extracted_text):
         # Remove empty lines and append to the answers list
         answers.extend([answer.strip() for answer in answer_texts if answer.strip()])
         # Print the answers
-        for i, answer in enumerate(answers, start=1):
-            print(f"Answer {i}: {answer}")
+        #for i, answer in enumerate(answers, start=1):
+            #print(f"Answer {i}: {answer}")
 
     # Ensure checks has at least two elements before accessing checks[1]
 
@@ -224,7 +224,7 @@ def extract_questions_from_text(extracted_text):
     # Insert everything into the answers array
     questions.extend(first_part)
     answers.extend(second_part)
-    print(answers)
+    #print(answers)
 
     return questions, answers
 
@@ -234,7 +234,17 @@ def get_data(extracted_text):
     questions, answers = extract_questions_from_text(extracted_text)
 
     for question, answer in zip(questions, answers):
-        data = check_answer(question, answer)
+        data = check_answer(question, answer, 0.4)
+        checks.append(data)
+
+    return checks
+
+def get_plagarism(extracted_text):
+    checks = []
+    questions, answers = extract_questions_from_text(extracted_text)
+
+    for question, answer in zip(questions, answers):
+        data = check_answer(question, answer, 0.8)
         checks.append(data)
 
     return checks
