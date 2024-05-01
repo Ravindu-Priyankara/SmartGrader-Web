@@ -254,3 +254,13 @@ def get_percentage(data):
     correct = data.count('Correct')
     percentage = (correct / total_questions) * 100
     return percentage
+
+def one_and_zero(data):
+    result = []
+    for item in data:
+        if item == "Correct":
+            result.append(1)
+        else:
+            result.append(0)
+    
+    return result

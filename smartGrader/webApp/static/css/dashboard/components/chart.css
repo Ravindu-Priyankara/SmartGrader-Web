@@ -73,3 +73,69 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
+.email {
+    position: absolute;
+    left: 980px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    height: 630px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+h3{
+    position: absolute;
+    left: 150px;
+}
+p{
+    font-family: Arial, sans-serif; /* Choose a suitable font */
+    font-size: 18px; /* Adjust the font size */
+    color: #333; /* Set the text color */
+    line-height: 1.6; /* Set the line height for better readability */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+    text-align: justify; /* Justify the text for a neat appearance */
+    text-indent: 20px; /* Indent the first line of each paragraph */
+}
+text{
+    position: absolute;
+    bottom: 50px;
+    left :150px;
+}
+h1{
+    font-family: Arial, sans-serif; /* Choose a suitable font */
+    font-size: 18px; /* Adjust the font size */
+    color: #333; /* Set the text color */
+    line-height: 1.6; /* Set the line height for better readability */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+    text-align: justify; /* Justify the text for a neat appearance */
+    text-indent: 20px; /* Indent the first line of each paragraph */
+}
+
+.radar2 {
+    position: absolute;
+    left: 350px;
+    bottom: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 600px;
+    height: 640px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.gauge2 {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
