@@ -25,22 +25,13 @@
     <div class="pie">
         <canvas id="percentageChart" width="100" height="100"></canvas>
     </div>
-    <div class="donut">
-        <canvas id="donutChart" width="200" height="200"></canvas> <!-- Add canvas for donut chart -->
-    </div>
-    <div class="radar">
+    <div class="radar2">
         <canvas id="radarChart" width="200" height="200"></canvas> <!-- Add canvas for radar chart -->
     </div>
-    <div class="gauge">
+    <div class="gauge2">
         <canvas id="gaugeChart" width="100" height="100"></canvas> <!-- Add canvas for gauge chart -->
     </div>
-    <div class="pie2">
-        <canvas id="pieChart" width="100" height="100"></canvas>
-    </div>
-    <div class="bubble">
-        <!--<canvas id="bubbleChart" width="400" height="400"></canvas>-->
-        <canvas id="bubbleChart" width="400" height="400"></canvas>
-    </div>
+    
     <div class="email">
         <h3>Report</h3>
         <br>
@@ -89,7 +80,7 @@
                 }
             }
         });
-        
+        /*
         // Render the donut chart using Chart.js
         var ctx2 = document.getElementById('donutChart').getContext('2d');
         var donutData = {
@@ -117,7 +108,7 @@
             type: 'doughnut',
             data: donutData,
             options: donutOptions
-        });
+        });*/
 
         // Render the radar chart using Chart.js
         var ctx3 = document.getElementById('radarChart').getContext('2d');
@@ -146,14 +137,14 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Question Spreadsheet'
+                        text: 'Marks Spreadsheet'
                     },
                     legend: {
                         position: 'bottom'
                     }
                 }
             }
-        });*/
+        });
 
         const data = {
             labels: ["Perfect", "Good", "Accept", "Weak"],
@@ -216,7 +207,7 @@
         });
 
         const ctx4 = document.getElementById('gaugeChart').getContext('2d');
-        const gaugeChart = new Chart(ctx4, config);
+        const gaugeChart = new Chart(ctx4, config);/*
 
         // Data for the pie chart
   

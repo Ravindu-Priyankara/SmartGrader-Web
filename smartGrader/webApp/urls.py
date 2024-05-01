@@ -12,4 +12,6 @@ urlpatterns = [
     path('view-users/', views.view_users, name='view_users'),
     path('dashboard/', dashboard, name='dashboard'), # dashboard url 
     path('upload/', views.upload_file, name='upload_file'), # upload pdf file
+    path('coding/',views.coding_assignment, name = 'coding'),
+    path('check/',views.upload_code_file, name = 'check/'),
 ]

@@ -10,7 +10,7 @@
         padding: 5px;
         position: relative;
         top: 3.2rem;
-        left: 10%;
+        left: 5%;
       }
       
       input[type="file"]::file-selector-button {
@@ -25,10 +25,11 @@
         
       }
     </style>
-    <form method="post" enctype="multipart/form-data" action = '/upload/?session_key={{session_key}}'>
+    <form method="post" enctype="multipart/form-data" action = '/check/?session_key={{session_key}}'>
       {% csrf_token %}
       {{ form.as_p }}
-      <input type="file" name="file" > 
+      <input type="file" name="file" >
+      <input type="file" name="file2" >
       <pi class="button1" id="downloadBtn">Cancel</pi>
       <button class="button1" type= "submit">Submit</button>
       <p>Submit your Assignments</p>
