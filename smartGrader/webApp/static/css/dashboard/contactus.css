@@ -1,0 +1,22 @@
+/*
+*Created by Ravindu Priyankara for smartgrader dashboard page 
+*2024-04-11
+*/
+.container{
+  width: 1440px;
+  height: 753px;
+  background-image: url('../../img/contact.jpg');
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+.box{
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(255, 255, 255, 0.349);
+  border: 1px solid rgb(1, 1, 252);
+  border-radius: 2%;
+
+}

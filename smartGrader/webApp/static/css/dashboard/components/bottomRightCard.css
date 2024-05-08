@@ -1,0 +1,38 @@
+.card{
+    position: absolute;
+    bottom:10px;
+    left: 10px;
+    width: 980px;
+    height: 200px;
+    border: 2px solid #1500ff;
+    border-radius: 10px;
+}
+.card2{
+    position: absolute;
+    bottom:10.2px;
+    left: 10.2px;
+    width: 960px;
+    height: 179.8px;
+    border: 1.5px solid #ff00d4;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(15,80,62,1) 0%, rgba(126,202,18,1) 100%);
+}
+h3 {
+    margin-top: 30px;
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+    color: white;
+    font-size: 55px;
+  }
+  img{
+    position:fixed;
+    top: 75%;
+    left: 650px;
+    width: 300px;
+    height:200px;
+  }

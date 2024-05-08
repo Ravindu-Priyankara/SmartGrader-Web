@@ -14,4 +14,5 @@ urlpatterns = [
     path('upload/', views.upload_file, name='upload_file'), # upload pdf file
     path('coding/',views.coding_assignment, name = 'coding'),
     path('check/',views.upload_code_file, name = 'check/'),
+    path('contact/',views.contact, name = 'contact'),#contact us page url
 ]

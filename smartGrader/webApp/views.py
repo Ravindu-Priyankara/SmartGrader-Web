@@ -403,6 +403,11 @@ def upload_code_file(request):
             count_value = one_and_zero(marks)
             print(count_value)
             print(decrypted_data)
+
+            #write html file
+            writer("smartGrader/webApp/templates/mail/marks.html",name,id,percentage,decrypted_data,decrypted_data,0)
+            #send mail
+            mail(email, "Your Coding Assignment Result", "smartGrader/webApp/templates/mail/marks.html")
             
 
             return render(request, 'dashboard/student_code.html',{'session_key':session_key,'percentage_correct': percentage,'name':name, 'id':id,'decrypted_data': decrypted_data
@@ -430,3 +435,7 @@ def upload_code_file(request):
     else:
         form = FileUploadForm()
     return render(request, 'upload.html', {'form': form})
+
+def contact(request):
+    session_key = request.GET.get('session_key')
+    return render(request, 'dashboard/contactus.html',{'session_key': session_key})
