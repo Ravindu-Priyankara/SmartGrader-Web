@@ -1,19 +1,51 @@
 {%load static%}
 <link rel="stylesheet" href="{% static 'css/dashboard/components/rightCard.css' %}"><!-- Load CSS file -->
-    <div class="card-hover">
-      <div class="card-hover__content">
-        <h3 class="card-hover__title">
-          Mark your <span>coding assignment</span> right now!
-        </h3>
-        <a href="#" class="card-hover__link">
-          <span>go</span>
-          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>        
-        </a>
-      </div>
-      <div class="card-hover__extra">
-        <h4>Learn <span>now</span> and get <span>90%</span> accuracy!</h4>
-      </div>
-      <img src="{% static 'img/code.jpg' %}" alt="" style="width: 420px; height: 500px;">
-    </div>
+<div class="calendar"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const calendar = document.querySelector('.calendar');
+
+    function generateCalendar(year, month) {
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const firstDay = new Date(year, month, 1).getDay();
+
+        let date = 1;
+        let calendarHTML = `<div class="month">${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}</div>`;
+        calendarHTML += '<table>';
+        calendarHTML += '<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>';
+        for (let i = 0; i < 6; i++) {
+            calendarHTML += '<tr>';
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay) {
+                    calendarHTML += '<td></td>';
+                } else if (date > daysInMonth) {
+                    break;
+                } else {
+                    const today = new Date();
+                    let className = '';
+                    if (year === today.getFullYear() && month === today.getMonth() && date === today.getDate()) {
+                        className = 'today';
+                    }
+                    calendarHTML += `<td class="${className}">${date}</td>`;
+                    date++;
+                }
+            }
+            calendarHTML += '</tr>';
+            if (date > daysInMonth) {
+                break;
+            }
+        }
+        calendarHTML += '</table>';
+        return calendarHTML;
+    }
+
+    const today = new Date();
+    calendar.innerHTML = generateCalendar(today.getFullYear(), today.getMonth());
+
+    calendar.addEventListener('click', function(event) {
+        if (event.target.tagName === 'TD' && event.target.textContent !== '') {
+            console.log(`Clicked on: ${event.target.textContent}`);
+        }
+    });
+});
+</script>

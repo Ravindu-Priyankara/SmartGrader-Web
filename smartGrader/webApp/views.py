@@ -14,7 +14,8 @@ from .forms import FileUploadForm
 from .forms import validate_pdf
 from PyPDF2 import PdfReader
 import io,sys
-
+from .mail import *
+from .mailWriter import *
 
 import re
 from .aiModel import *
@@ -238,6 +239,12 @@ def upload_file(request):
 
             '''value = check_answer(question1_match.group(0),question1_match.group(1))
             print(value)'''
+            mail_address = f"{id}@students.plymouth.ac.uk"
+            answers = one_and_zero(data)
+            #write html file
+            writer("smartGrader/webApp/templates/mail/marks.html",name,id,percentage,data,answers,plagarism_percentage)
+            #send mail
+            mail(mail_address, "Your Non Coding Assignment Result", "smartGrader/webApp/templates/mail/marks.html")
 
             return render(request, 'dashboard/student.html',{'percentage_correct': percentage, 'decrypted_data': decrypted_data, 'count':count_value, 'plagarism': plagarism_percentage,
                                                              'name':name, 'id':id, "accuracy":accuracy,'session_key':session_key})
@@ -396,6 +403,11 @@ def upload_code_file(request):
             count_value = one_and_zero(marks)
             print(count_value)
             print(decrypted_data)
+
+            #write html file
+            writer("smartGrader/webApp/templates/mail/marks.html",name,id,percentage,decrypted_data,decrypted_data,0)
+            #send mail
+            mail(email, "Your Coding Assignment Result", "smartGrader/webApp/templates/mail/marks.html")
             
 
             return render(request, 'dashboard/student_code.html',{'session_key':session_key,'percentage_correct': percentage,'name':name, 'id':id,'decrypted_data': decrypted_data
@@ -423,3 +435,11 @@ def upload_code_file(request):
     else:
         form = FileUploadForm()
     return render(request, 'upload.html', {'form': form})
+
+def contact(request):
+    session_key = request.GET.get('session_key')
+    return render(request, 'dashboard/contactus.html',{'session_key': session_key})
+
+def about(request):
+    session_key = request.GET.get('session_key')
+    return render(request, 'dashboard/aboutus.html',{'session_key': session_key})
