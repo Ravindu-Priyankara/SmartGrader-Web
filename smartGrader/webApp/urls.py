@@ -15,4 +15,5 @@ urlpatterns = [
     path('coding/',views.coding_assignment, name = 'coding'),
     path('check/',views.upload_code_file, name = 'check/'),
     path('contact/',views.contact, name = 'contact'),#contact us page url
+    path('about/',views.about, name = 'about'),#contact us page url
 ]

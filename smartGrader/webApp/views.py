@@ -439,3 +439,7 @@ def upload_code_file(request):
 def contact(request):
     session_key = request.GET.get('session_key')
     return render(request, 'dashboard/contactus.html',{'session_key': session_key})
+
+def about(request):
+    session_key = request.GET.get('session_key')
+    return render(request, 'dashboard/aboutus.html',{'session_key': session_key})
