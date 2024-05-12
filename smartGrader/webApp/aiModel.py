@@ -95,19 +95,6 @@ def ai_model(data):
     for i in range(0, 10):
         all_responses.append(intents['intents'][label]['responses'][i])
 
-    '''
-     # Retrieve context_set for the given label
-    label_context_sets = []
-    for intent in intents['intents']:
-        if 'tag' in intent and intent['tag'] == id2label[label]:
-            context_set = intent.get('context_set')
-            if context_set:
-                if label not in label_context_sets:
-                    label_context_sets[label] = []  # Initialize an empty list for the label if it doesn't exist
-                label_context_sets[label].append(context_set)  # Append the context_set to the list for the label
-
-    # Split and get name only from the context_set values
-    #label_context_sets = {k: [v.split()[0] for v in vs] for k, vs in label_context_sets.items()}'''
 
      # Retrieve context_set for the given label
     label_context_sets = []
@@ -126,6 +113,20 @@ def ai_model(data):
 
     
     return all_responses
+
+    '''
+     # Retrieve context_set for the given label
+    label_context_sets = []
+    for intent in intents['intents']:
+        if 'tag' in intent and intent['tag'] == id2label[label]:
+            context_set = intent.get('context_set')
+            if context_set:
+                if label not in label_context_sets:
+                    label_context_sets[label] = []  # Initialize an empty list for the label if it doesn't exist
+                label_context_sets[label].append(context_set)  # Append the context_set to the list for the label
+
+    # Split and get name only from the context_set values
+    #label_context_sets = {k: [v.split()[0] for v in vs] for k, vs in label_context_sets.items()}'''
     
 
     #response = random.choice(intents['intents'][label]['responses'])
