@@ -1,4 +1,6 @@
-# SmartGrader with BERT
+# SmartGrader
+![UI Image 1](img/1.jpg)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 ## Overview
 
@@ -96,6 +98,9 @@ or
    ```bash
    make pylint
    ```
+## Authors
+
+- [@Ravindu-Priyankara](https://github.com/Ravindu-Priyankara)
 
 ## Contributing
 
@@ -116,3 +121,22 @@ This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LI
 ## Contact
 
 For questions or feedback, please contact h.h.a.r.p.premachandra@gmail.com.
+
+## Ui
+
+![UI Image 1](img/1.jpg)
+![UI Image 1](img/2.jpg)
+![UI Image 1](img/3.jpg)
+![UI Image 1](img/4.jpg)
+![UI Image 1](img/5.jpg)
+![UI Image 1](img/6.jpg)
+![UI Image 1](img/7.jpg)
+![UI Image 1](img/8.jpg)
+![UI Image 1](img/9.jpg)
+![UI Image 1](img/10.jpg)
+![UI Image 1](img/11.jpg)
+![UI Image 1](img/12.jpg)
+![UI Image 1](img/13.jpg)
+![UI Image 1](img/14.jpg)
+![UI Image 1](img/15.jpg)
+
